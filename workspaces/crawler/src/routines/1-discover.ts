@@ -15,10 +15,29 @@ import scrapeIt from 'scrape-it'
 * 2. In 2019 Q4, it's 2-5 pages of new blueprint per day.
 * 3. Note steam sorting algorithm - it works but it's not perfect!
 */
-const TYPE = 'mostrecent'
-const MAX_PAGES = 20  // MAX is 1670 due how steam workshop works.
+const TYPE = 'totaluniquesubscribers'
+const MAX_PAGES = 1670  // MAX is 1670 due how steam workshop works.
 const SKIP_PAGES = 0
 
+/*
+const UPLOAD_START = 0
+const UPLOAD_END = 0
+const UPDATE_START = 0
+const UPDATE_END = 0
+
+or
+
+const UPLOAD_START = Math.floor(new Date('2024-01-01').getTime() / 1000); // Replace with desired start date
+const UPLOAD_END = Math.floor(new Date('2024-12-31').getTime() / 1000);   // Replace with desired end date
+const UPDATE_START = Math.floor(new Date('2024-11-01').getTime() / 1000); // Replace with desired start date
+const UPDATE_END = Math.floor(new Date('2024-11-30').getTime() / 1000);   // Replace with desired end date
+
+//when upload date is filtered, update date is = NaN, not sure how important it is though. Manual page entry works fine if update is 0 instead of NaN
+const url = `https://steamcommunity.com/workshop/browse/?appid=244850&searchtext=&childpublishedfileid=0&browsesort=${TYPE}&section=readytouseitems&requiredtags%5B%5D=Blueprint&created_date_range_filter_start=${UPLOAD_START}&created_date_range_filter_end=${UPLOAD_END}&updated_date_range_filter_start=${UPDATE_START}&updated_date_range_filter_end=${UPDATE_END}&actualsort=${TYPE}&p=${page}`
+
+//vanilla URL for reference: https://steamcommunity.com/workshop/browse/?appid=244850&searchtext=&childpublishedfileid=0&browsesort=mostrecent&section=readytouseitems&requiredtags%5B%5D=Blueprint&created_date_range_filter_start=0&created_date_range_filter_end=0&updated_date_range_filter_start=0&updated_date_range_filter_end=0
+
+*/
 
 export interface IDiscoverScrapeDatum {
     _id: number,

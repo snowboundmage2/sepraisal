@@ -29,7 +29,7 @@ export default hot(createSmartFC(styles, __filename)<IProps>(({children, classes
     return (
         <Container className={classes.root} maxWidth="sm">
             <Alert severity='warning'>
-                <AlertTitle>Browse is offline. Analyzing uploads in browser still work.</AlertTitle>
+                <AlertTitle>Browse is WIP. Analyzing uploads in browser still work.</AlertTitle>
                 <Typography>
                     SEPraisal is looking for maintainers.
                 </Typography>

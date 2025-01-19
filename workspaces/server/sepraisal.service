@@ -4,7 +4,7 @@ Description=SEPraisal Server
 
 [Service]
 User=steam
-ExecStart=/home/steam/sepraisal/start.sh
+ExecStart=/mnt/f/GIT/sepraisal/workspaces/server/utils/start.sh
 TimeoutSec=30
 Restart=on-failure
 RestartSec=30

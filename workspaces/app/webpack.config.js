@@ -88,7 +88,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(IS_PRODUCTION ? 'production' : 'development'),
 
-            'process.env.API': JSON.stringify(IS_PRODUCTION ? 'https://api2.spaceengineerspraisal.net/hello' : process.env.API),
+            'process.env.API': JSON.stringify(IS_PRODUCTION ? 'http://localhost:3000' : process.env.API),
             'process.env.GOAT_COUNTER_URL': JSON.stringify(process.env.GOAT_COUNTER_URL),
             'process.env.MATAMO_SITE_ID': JSON.stringify(process.env.MATAMO_SITE_ID),
             'process.env.MATAMO_URL': JSON.stringify(process.env.MATAMO_URL),
@@ -123,7 +123,7 @@ module.exports = {
 
     devServer: {
         https: true,
-        host: '0.0.0.0',
+        host: 'localhost',
         historyApiFallback: true,  // for SPA to fallback to index.
     }
 

@@ -49,10 +49,10 @@ export default hot(createSmartFC(styles, __filename)<IProps>(({children, classes
             asideTitle='Filters'
             defaultOpen
         >
-            <AlertUkraine />
-            {/* <Search className={classes.search} enableSort enableStatus />
+            {/* <AlertUkraine /> */}
+            <Search className={classes.search} enableSort enableStatus />
             <Cards />
-            <LoadMore /> */}
+            <LoadMore />
         </DefaultLayout>
     )
 })) /* ============================================================================================================= */

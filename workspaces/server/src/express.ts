@@ -8,11 +8,11 @@ const app = express()
 app.use(cors({credentials: true, origin: true}))
 
 // The HelloWorld
-app.get('/', (req, res) => {
+app.get('/hello', (req, res) => {
     res.send('Space Engineers Praisal database API.')
 })
 
-app.get('/hello', (req, res) => {
+app.get('/', (req, res) => {
     (async () => {
         const awsRequest: APIGatewayProxyEvent = {
             body: req.body,

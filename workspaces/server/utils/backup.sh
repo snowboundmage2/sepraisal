@@ -3,7 +3,7 @@ OUT="$MY_DIR/backup.json"
 PORT=27019
 
 # ## Open tunnel to MongoDB using "sepraisal" credentials.
-(ssh -NL $PORT:localhost:27017 sepraisal2) &
+(ssh -NL $PORT:localhost:27017) &
 sleep 1
 
 mongo --port $PORT --quiet "$MY_DIR/backup.js" > $OUT

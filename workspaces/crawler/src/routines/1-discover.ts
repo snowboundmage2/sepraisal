@@ -19,6 +19,12 @@ const TYPE = 'totaluniquesubscribers'
 const MAX_PAGES = 1670  // MAX is 1670 due how steam workshop works.
 const SKIP_PAGES = 0
 
+const UPLOAD_START = 1704031200
+const UPLOAD_END = 0
+const UPDATE_START = 0
+const UPDATE_END = 0
+
+
 /*
 const UPLOAD_START = 0
 const UPLOAD_END = 0
@@ -53,7 +59,7 @@ export interface IDiscoverScrapeData {
 
 const scrape = async (page: number): Promise<IDiscoverScrapeData> => {
 
-    const url = `https://steamcommunity.com/workshop/browse/?appid=244850&requiredtags%5B0%5D=Blueprint&actualsort=$TYPE&browsesort=${TYPE}&p=${page}`
+    const url = `https://steamcommunity.com/workshop/browse/?appid=244850&searchtext=&childpublishedfileid=0&browsesort=${TYPE}&section=readytouseitems&requiredtags%5B%5D=Blueprint&created_date_range_filter_start=${UPLOAD_START}&created_date_range_filter_end=${UPLOAD_END}&updated_date_range_filter_start=${UPDATE_START}&updated_date_range_filter_end=${UPDATE_END}&actualsort=${TYPE}&p=${page}`
 
     const {data} = await scrapeIt<IDiscoverScrapeData>(url, {
         items: {listItem: '.workshopItem', data: {
